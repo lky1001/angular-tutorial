@@ -1,41 +1,60 @@
 # angular-tutorial
 
-## 예제에 사용한 것들
-- 맥북
-- node 6.10.3
-- npm 3.10.10
-- Angular 5.0.0
-- Angular CLI 1.5.0
-- tsc(typescriptcompiler) 2.6.1
+## 챕터02
 
-## node 설치
+### 컴파일
+- ES3이 기본으로 컴파일
 ```
-$ brew install node
+$ tsc class-extend.ts
+```
+```
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    return Person;
+}());
+var Employee = /** @class */ (function (_super) {
+    __extends(Employee, _super);
+    function Employee() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Employee;
+}(Person));
 
-$ node -v
-v6.10.3
-
-$ npm -v
-3.10.10
 ```
 
-## typescript 설치
-```
-$ npm install -g typescript
+- ES6으로 컴파일하기
 
-$ tsc -v
-Version 2.6.1
+```
+$ tsc class-extend.ts --target es6
+```
+```
+class Person {
+}
+class Employee extends Person {
+}
 ```
 
-## Angular CLI 설치
-```
-$ npm install -g @angular/cli
+- ES6로 수정
 
-$ ng -v
-    
-Angular CLI: 1.5.0
-Node: 6.10.3
-OS: darwin x64
-Angular: undefined
-...
+```
+tsc class-es6.ts --target es6
+```
+```
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
 ```
