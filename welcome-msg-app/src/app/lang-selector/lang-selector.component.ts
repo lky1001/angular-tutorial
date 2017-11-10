@@ -7,10 +7,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class LangSelectorComponent implements OnInit {
+  langCode: string;
 
-  constructor() { }
+  constructor() { 
+    this.langCode = 'ko';
+  }
 
   ngOnInit() {
   }
 
+  setLangCode(code: string) {
+    this.langCode = code;
+  }
 }

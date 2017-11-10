@@ -1,17 +1,17 @@
 <div id="lang-select">
   <div class="lang-box">
     <img src="/assets/img/South_Korea.png">
-    <label *ngIf="lnagCode === 'ko'">선택됨</label>
+    <label *ngIf="langCode === 'ko'">선택됨</label>
     <button type="button" (click)="setLangCode('ko')" [disabled]="langCode === 'ko'">한국어</button>
   </div>
   <div class="lang-box">
     <img src="/assets/img/USA.png">
-    <label *ngIf="lnagCode === 'en'">선택됨</label>
-    <button type="button" (click)="setLangCode('en')" [disabled]="langCode === 'ko'">English</button>
+    <label *ngIf="langCode === 'en'">선택됨</label>
+    <button type="button" (click)="setLangCode('en')" [disabled]="langCode === 'en'">English</button>
   </div>
   <div class="lang-box">
     <img src="/assets/img/Japen.png">
-    <label *ngIf="lnagCode === 'ja'">선택됨</label>
-    <button type="button" (click)="setLangCode('ja')" [disabled]="langCode === 'ko'">Japanese</button>
+    <label *ngIf="langCode === 'ja'">선택됨</label>
+    <button type="button" (click)="setLangCode('ja')" [disabled]="langCode === 'ja'">Japanese</button>
   </div>
 </div>
