@@ -30,3 +30,15 @@ chunk {vendor} vendor.bundle.js (vendor) 7.03 MB [initial] [rendered]
 
 webpack: Compiled successfully.
 ```
+
+## component lifecycle
+```
+OnInit
+app.component.ts:71 DoCheck
+app.component.ts:71 AfterContentInit
+app.component.ts:71 AfterContentChecked
+app.component.ts:71 AfterViewChecked
+app.component.ts:71 DoCheck
+app.component.ts:71 AfterContentChecked
+app.component.ts:71 AfterViewChecked
+```
