@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-welcome-msg',
@@ -65,6 +68,10 @@ export class WelcomeMsgComponent {
 
   setName(name) {
     this.userName = name;
+  }
+
+  onChange() {
+    this.valid = this.userName.length > 0;
   }
 
   logIt(msg: string) {
