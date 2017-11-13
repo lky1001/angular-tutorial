@@ -7,6 +7,7 @@
 - Angular 5.0.0
 - Angular CLI 1.5.0
 - tsc(typescriptcompiler) 2.6.1
+- 앵귤러첫걸음(한빛미디어)
 
 ## node 설치
 ```
@@ -39,3 +40,8 @@ OS: darwin x64
 Angular: undefined
 ...
 ```
+
+## 소스코드
+
+- [챕터02](https://github.com/lky1001/angular-tutorial/tree/ch02)
+- [챕터03](https://github.com/lky1001/angular-tutorial/tree/ch03)
