@@ -2,6 +2,8 @@ import { Injectable, Inject } from '@angular/core';
 import { LogLevel } from './log-level.enum';
 import * as format from 'date-fns/format';
 
+import { LOG_LEVEL_TOKEN } from './app.token';
+
 // 생성자의 매개변수를 의존성 주입 받을 것이다라는 얘기
 @Injectable()
 export class MySpecialLoggerService {
@@ -16,7 +18,7 @@ export class MySpecialLoggerService {
 
   // ts는 접근자가 없으면 기본 public
   // 기본적으로 클래스는 타입추론을 하지만 enum은 열거형이므로(js에서 숫자 값) 명시적인 선언이 필요
-  constructor(@Inject('logLevel') logLevel: LogLevel) { 
+  constructor(@Inject(LOG_LEVEL_TOKEN) logLevel: LogLevel) { 
     this.logLevel = logLevel;
   }
 
