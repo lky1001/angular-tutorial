@@ -9,10 +9,9 @@ import { LogLevel } from './log-level.enum';
 })
 export class AppComponent {
   title = 'mpl works!';
-  logger: MySpecialLoggerService;
 
-  constructor() {
-    this.logger = new MySpecialLoggerService(LogLevel.INFO);
+  // 의존성 주입
+  constructor(private logger: MySpecialLoggerService) {
     //this.testLoggerLevel();
   }
 

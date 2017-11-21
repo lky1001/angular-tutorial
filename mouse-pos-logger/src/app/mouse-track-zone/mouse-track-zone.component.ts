@@ -10,10 +10,9 @@ import { LogLevel } from '../log-level.enum';
 export class MouseTrackZoneComponent implements OnInit {
   // 컴포넌트 로그 레벨
   logLevel: LogLevel = LogLevel.INFO;
-  // 속성 바인딩
-  @Input() private logger: MySpecialLoggerService;
 
-  constructor() {
+  // 의존성 주입
+  constructor(private logger: MySpecialLoggerService) {
   }
 
   ngOnInit() {
