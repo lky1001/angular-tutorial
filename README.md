@@ -22,3 +22,8 @@ $ ng g service my-special-logger
 $ ng g enum log-level
   create src/app/log-level.enum.ts (25 bytes)
 ```
+
+### 시간 포맷터 설치
+```
+$ npm i --save date-fns
+```

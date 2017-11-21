@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LogLevel } from './log-level.enum';
+import * as format from 'date-fns/format';
 
 @Injectable()
 export class MySpecialLoggerService {
@@ -17,4 +18,48 @@ export class MySpecialLoggerService {
     this.logLevel = logLevel;
   }
 
+  debug(msg: string) {
+    this.log(LogLevel.DEBUG, msg);
+  }
+
+  info(msg: string) {
+    this.log(LogLevel.INFO, msg);
+  }
+
+  warn(msg: string) {
+    this.log(LogLevel.DEBUG, msg);
+  }
+
+  error(msg: string) {
+    this.log(LogLevel.DEBUG, msg);
+  }
+
+  log(logLevel: LogLevel, msg: string) {
+    const logMsg = this.getFormattedLogMsg(logLevel, msg);
+    if (this.isProperLogLevel(logLevel)) {
+      console.log(logMsg);
+      this.keepLogHistory(logMsg);
+    }
+  }
+
+  private keepLogHistory(log: string) {
+    if (this.logs.length === this.MAX_HISTORY_CNT) {
+      this.logs.shift();
+    }
+
+    this.logs.push(log);
+  }
+
+  private getFormattedLogMsg(logLevel: LogLevel, msg: string) {
+    const curTimestamp = format(new Date(), this.TIME_FORMATTER);
+    return `[${logLevel[logLevel]}] ${curTimestamp} ${msg}`;
+  }
+
+  private isProperLogLevel(logLevel: LogLevel): boolean {
+      if (this.logLevel === LogLevel.DEBUG) {
+        return true;
+      }
+      
+      return logLevel >= this.logLevel;
+  }
 }
