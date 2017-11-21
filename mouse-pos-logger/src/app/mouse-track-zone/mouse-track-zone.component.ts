@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MySpecialLoggerService } from '../my-special-logger.service';
 import { LogLevel } from '../log-level.enum';
 
@@ -10,12 +10,10 @@ import { LogLevel } from '../log-level.enum';
 export class MouseTrackZoneComponent implements OnInit {
   // 컴포넌트 로그 레벨
   logLevel: LogLevel = LogLevel.INFO;
-  // 로그 출력 서비스
-  logger: MySpecialLoggerService;
+  // 속성 바인딩
+  @Input() private logger: MySpecialLoggerService;
 
   constructor() {
-    // 컴포넌트마다 new 한다.
-    this.logger = new MySpecialLoggerService(this.logLevel);
   }
 
   ngOnInit() {
