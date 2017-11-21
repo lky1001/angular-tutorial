@@ -11,8 +11,13 @@ export class AppComponent {
   title = 'mpl works!';
 
   // 의존성 주입
+  // app.module.ts에서 생성된 것을 주입 받음
   constructor(private logger: MySpecialLoggerService) {
     //this.testLoggerLevel();
+  }
+
+  printDebugLog() {
+    this.logger.debug("test depency injector tree!");
   }
 
   private testLoggerLevel() {
