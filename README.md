@@ -27,3 +27,17 @@ $ ng g enum log-level
 ```
 $ npm i --save date-fns
 ```
+
+### 의존성 주입
+- @Injectable
+- @Inject
+- @InjectionToken
+
+### logger-service 클래스, another-logger 서비스 생성
+```
+$ ng g class logger-service
+  create src/app/logger-service.ts (31 bytes)
+$ ng g service another-logger
+  create src/app/another-logger.service.spec.ts (417 bytes)
+  create src/app/another-logger.service.ts (119 bytes)
+```
