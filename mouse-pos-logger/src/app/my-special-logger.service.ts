@@ -27,11 +27,11 @@ export class MySpecialLoggerService {
   }
 
   warn(msg: string) {
-    this.log(LogLevel.DEBUG, msg);
+    this.log(LogLevel.WARN, msg);
   }
 
   error(msg: string) {
-    this.log(LogLevel.DEBUG, msg);
+    this.log(LogLevel.ERROR, msg);
   }
 
   log(logLevel: LogLevel, msg: string) {
@@ -59,7 +59,7 @@ export class MySpecialLoggerService {
       if (this.logLevel === LogLevel.DEBUG) {
         return true;
       }
-      
+
       return logLevel >= this.logLevel;
   }
 }
