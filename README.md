@@ -15,3 +15,10 @@ $ ng g service my-special-logger
   create src/app/my-special-logger.service.spec.ts (430 bytes)
   create src/app/my-special-logger.service.ts (121 bytes)
 ```
+- 타입스크립트는 접근자를 설정 안하면 기본 public
+
+### 로그 레벨 enum 생성
+```
+$ ng g enum log-level
+  create src/app/log-level.enum.ts (25 bytes)
+```
