@@ -1,11 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { MySpecialLoggerService } from './my-special-logger.service';
+import { LOG_LEVEL_TOKEN } from './app.token';
+import { LogLevel } from './log-level.enum';
 
 describe('MySpecialLoggerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MySpecialLoggerService]
+      providers: [MySpecialLoggerService,
+        {
+          provide: LOG_LEVEL_TOKEN,
+          useValue: LogLevel.INFO
+        }
+      ]
     });
   });
 
